@@ -15,7 +15,7 @@ class SchemaDemoBase(object):
         self.count = 0
 
     def get_connection_string(self):
-        with open('../connection_string.txt') as f:
+        with open('connection_string.txt') as f:
             return f.readline()
 
     def parse_args(self, argv):

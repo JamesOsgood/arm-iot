@@ -4,7 +4,7 @@ import sys
 import getopt
 import datetime
 from pymongo import UpdateOne
-from schema_demo_base import SchemaDemoBase
+from shared.schema_demo_base import SchemaDemoBase
 
 class SchemaDemo(SchemaDemoBase):
     

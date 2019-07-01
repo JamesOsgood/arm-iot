@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/usr/local/bin/python",
+    "cSpell.words": [
+        "base",
+        "demo",
+        "hqdn",
+        "schema",
+        "stats",
+        "upsert"
+    ]
+}

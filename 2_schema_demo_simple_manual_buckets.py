@@ -45,7 +45,7 @@ class SchemaDemo(SchemaDemoBase):
 if __name__ == "__main__":
     try:
         test = SchemaDemo()
-        collection = test.init(sys.argv, 'schema_demo2')
+        collection = test.init(sys.argv, 'schema_demo2', drop_collection=True)
         if collection:
             test.insert_docs(collection)
     except KeyboardInterrupt:

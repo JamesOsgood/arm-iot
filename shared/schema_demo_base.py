@@ -25,7 +25,7 @@ class SchemaDemoBase(object):
             'n': 10080,
             'b' : 60,
             'start-date': datetime.datetime(2019, 1, 1),
-            'drop' : True
+            'drop' : False
         }
         opts, args = getopt.getopt(argv[1:], "hqdn:")
         for opt, arg in opts:

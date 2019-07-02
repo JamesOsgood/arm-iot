@@ -27,14 +27,14 @@ class SchemaDemo(SchemaDemoBase):
                 
                 if self.batch:
                     operation = UpdateOne( {'sensor_id': 12345, 'date1': start, 'date2': end},
-                                           {'$addToSet': {'measurements': doc}},
+                                           {'$push': {'measurements': doc}},
                                            upsert=True
                                           )
                     self.add_to_batch(collection, operation)
                 else:
                     collection.update_one(
                         {'sensor_id': 12345, 'date1': start, 'date2': end},
-                        {'$addToSet': {'measurements': doc}},
+                        {'$push': {'measurements': doc}},
                         upsert = True)
                 self.inc_doc_count()
             start = end
@@ -44,7 +44,7 @@ class SchemaDemo(SchemaDemoBase):
 if __name__ == "__main__":
     try:
         test = SchemaDemo()
-        collection = test.init(sys.argv, 'schema_demo3')
+        collection = test.init(sys.argv, 'schema_demo3', drop_collection=True)
         if collection:
             test.insert_docs(collection)
     except KeyboardInterrupt:

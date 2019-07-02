@@ -28,7 +28,7 @@ class SchemaDemo(SchemaDemoBase):
                     {
                         '$min': {'date1': doc['timestamp']},
                         '$max': {'date2': doc['timestamp']},
-                        '$addToSet': {'measurements': doc},
+                        '$push': {'measurements': doc},
                         '$inc': {'count': 1, 'sum_temp': doc['temperature'], 'sum_moisture': doc['moisture']}
                     },
                     upsert = True)
@@ -39,7 +39,7 @@ class SchemaDemo(SchemaDemoBase):
                     {
                         '$min': {'date1': doc['timestamp']},
                         '$max': {'date2': doc['timestamp']},
-                        '$addToSet': {'measurements': doc},
+                        '$push': {'measurements': doc},
                         '$inc': {'count': 1, 'sum_temp': doc['temperature'], 'sum_moisture': doc['moisture']}
                     },
                     upsert = True)
@@ -49,7 +49,7 @@ class SchemaDemo(SchemaDemoBase):
 if __name__ == "__main__":
     try:
         test = SchemaDemo()
-        collection = test.init(sys.argv, 'schema_demo4')
+        collection = test.init(sys.argv, 'schema_demo4', drop_collection=True)
         if collection:
             test.insert_docs(collection)
     except KeyboardInterrupt:

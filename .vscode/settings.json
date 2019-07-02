@@ -2,7 +2,9 @@
     "python.pythonPath": "/usr/local/bin/python",
     "cSpell.words": [
         "base",
+        "cond",
         "demo",
+        "elems",
         "hqdn",
         "schema",
         "stats",

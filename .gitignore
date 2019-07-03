@@ -1,2 +1,3 @@
 *.pyc
 Output/
+connection_string.txt

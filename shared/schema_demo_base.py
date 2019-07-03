@@ -79,7 +79,7 @@ class SchemaDemoBase(object):
 
             if drop_collection or self.options['drop']:
                 print("Dropping collection")
-                collection.drop()
+                collection.drop({})
 
             return collection
 

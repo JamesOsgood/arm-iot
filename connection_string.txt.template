@@ -1,0 +1,1 @@
+mongodb+srv://<user>:<password>@iot-demo-xxxx.mongodb.net/test?retryWrites=true&w=majority

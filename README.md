@@ -12,21 +12,27 @@ Find any bucket document with a measurement where pressure >= 1040 and filter th
 
 ```javascript
 db.schema_demo5.aggregate(
-    [{$match: {
-    "measurements.pressure" :
-     { $gte : 1040 }
-    }}, {$project: {
-    elems : {
-        $filter : 
-        {
-        input : "$measurements",
-        as : 'item',
-        cond : { $gte : ['$$item.pressure', 1040] }
+    [
+      {
+        $match: { "measurements.pressure" : { $gte : 1040 } }
+      }, 
+      {
+        $project: 
+          {
+            measurement : 
+              {
+                  $filter : 
+                  {
+                    input : "$measurements",
+                    as : 'item',
+                    cond : { $gte : ['$$item.pressure', 1040] }
+                  }
+              },
+            sensor_id : 1,
+            count : 1
+          }
         }
-    },
-    sensor_id : 1,
-    count : 1
-    }}]
+      ]
 )
 ```
 

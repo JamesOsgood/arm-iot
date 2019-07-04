@@ -74,7 +74,7 @@ class SchemaDemoBase(object):
             conn_str = self.get_connection_string()
             print( f'Connecting to {conn_str}' )
             connection = MongoClient(conn_str)
-            db = connection['b2b']
+            db = connection['iot']
             collection = db[collection_name]
 
             if drop_collection or self.options['drop']:

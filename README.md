@@ -55,7 +55,7 @@ exports = function(changeEvent) {
 
   console.log(changeEvent);
   
-  var collection = context.services.get("iot-demo").db("b2b").collection("alerts");
+  var collection = context.services.get("iot-demo").db("iot").collection("alerts");
   var alert_message = { 'message' : 'Pressure has gone above value', 'm' : changeEvent.fullDocument };
   collection.insertOne(alert_message);
   

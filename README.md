@@ -1,5 +1,15 @@
 # arm-iot
 
+## Setup
+
+Create a free M0 [MongoDB Atlas cluster](https://www.mongodb.com/cloud/atlas) in the cloud provider of your choice.
+
+Install Python 3 and the following packages pymongo, dnspython.
+
+Copy `connection_string.txt.template` to `connection_string.txt` and paste in the Atlas connection string as documented [here](https://docs.atlas.mongodb.com/getting-started/?_ga=2.233944087.82986543.1561906829-943158870.1536563311)
+
+You can then run the queries below and view the results using the community edition of [MongoDB Compass](https://www.mongodb.com/products/compass)
+
 ## Queries
 
 Find any bucket document with a measurement where pressure >= 1040

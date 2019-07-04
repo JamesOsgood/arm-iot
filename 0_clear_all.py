@@ -10,7 +10,7 @@ class SchemaDemo(SchemaDemoBase):
 
     def clear_all(self):
         client = MongoClient(self.get_connection_string())
-        db = client.b2b
+        db = client.iot
         collections = ['alerts', 'schema_demo1', 'schema_demo2', 'schema_demo3', 'schema_demo4', 'schema_demo5' ]
         for collection in collections:
             print(f'Dropping {collection}')

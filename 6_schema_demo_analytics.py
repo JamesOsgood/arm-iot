@@ -15,20 +15,7 @@ class SchemaDemo(SchemaDemoBase):
 
     def find_pressure_average(self, collection):
 
-        pipeline = [
-            {
-                '$unwind': {
-                    'path': '$measurements'
-                }
-            }, {
-                '$group': {
-                    '_id': '$sensor_id', 
-                    'avg_pressure': {
-                        '$avg': '$measurements.pressure'
-                    }
-                }
-            }
-        ]
+        pipeline = []
         
         results = list(collection.aggregate(pipeline))
         return results[0]['avg_pressure']

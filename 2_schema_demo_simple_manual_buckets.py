@@ -28,7 +28,9 @@ class SchemaDemo(SchemaDemoBase):
         b = self.options['b']
         start = self.options['start-date']
         for i in range(0, n, b):
+            
             doc = self.create_doc()
+            
             for j in range(b):
                 sub_doc = self.create_sub_doc(start, i+j)
                 doc['measurements'].append(sub_doc)

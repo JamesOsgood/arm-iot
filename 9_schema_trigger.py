@@ -56,7 +56,7 @@ class SchemaDemo(SchemaDemoBase):
 if __name__ == "__main__":
     try:
         test = SchemaDemo()
-        collection = test.init(sys.argv, 'schema_demo5', drop_collection=False)
+        collection = test.init(sys.argv, 'demo_trigger', drop_collection=False)
         if collection:
             test.fire_trigger(collection, 1050)
     except KeyboardInterrupt:

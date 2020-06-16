@@ -1,3 +1,4 @@
 *.pyc
 Output/
 connection_string.txt
+.DS_Store

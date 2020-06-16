@@ -18,13 +18,14 @@ class SchemaDemo(SchemaDemoBase):
     def insert_docs(self, collection):
         n = self.options['n']
         b = self.options['b']
+        bucket_size = b / 2
         start = self.options['start-date']
         for i in range(n):
             doc = self.create_sub_doc(start, i)
             
             if self.batch:
                 operation = UpdateOne(                    
-                    {'sensor_id': 12345, 'count': {'$lt': b/2}},
+                    {'sensor_id': 12345, 'count': {'$lt': bucket_size}},
                     {
                         '$min': {'date1': doc['timestamp']},
                         '$max': {'date2': doc['timestamp']},
@@ -35,7 +36,7 @@ class SchemaDemo(SchemaDemoBase):
                 self.add_to_batch(collection, operation)
             else:
                 collection.update_one(
-                    {'sensor_id': 12345, 'count': {'$lt': b/2}},
+                    {'sensor_id': 12345, 'count': {'$lt': bucket_size}},
                     {
                         '$min': {'date1': doc['timestamp']},
                         '$max': {'date2': doc['timestamp']},

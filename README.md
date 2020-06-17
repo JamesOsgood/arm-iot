@@ -1,4 +1,4 @@
-# arm-iot
+# MongoDB IoT Patterns
 
 ## Setup
 
